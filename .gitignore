@@ -1,0 +1,13 @@
+Library/
+Temp/
+Obj/
+Build/
+Builds/
+Logs/
+UserSettings/
+MemoryCaptures/
+Assembly-CSharp.csproj
+DemoStarter.sln
+.vs/
+.idea/
+*.userprefs
