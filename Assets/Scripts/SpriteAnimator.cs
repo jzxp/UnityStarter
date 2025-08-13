@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 using System.Collections.Generic;
 
 [System.Serializable]
@@ -12,15 +12,15 @@ public class SpriteAnimationClip
 
 public class SpriteAnimator : MonoBehaviour
 {
-    [Header("¶¯»­ÉèÖÃ")]
+    [Header("åŠ¨ç”»è®¾ç½®")]
     public List<SpriteAnimationClip> animations;
-    [SerializeField] private Vector3 initialPosition = Vector3.zero; // ĞÂÔö³õÊ¼Î»ÖÃÉèÖÃ
-    [SerializeField] private bool useMainCameraAsReference = false; // ÊÇ·ñÊ¹ÓÃÖ÷Ïà»ú×÷Îª²Î¿¼
+    [SerializeField] private Vector3 initialPosition = Vector3.zero; // æ–°å¢åˆå§‹ä½ç½®è®¾ç½®
+    [SerializeField] private bool useMainCameraAsReference = false; // æ˜¯å¦ä½¿ç”¨ä¸»ç›¸æœºä½œä¸ºå‚è€ƒ
 
-    [Header("×é¼şÒıÓÃ")]
+    [Header("ç»„ä»¶å¼•ç”¨")]
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    // ÔËĞĞÊ±±äÁ¿
+    // è¿è¡Œæ—¶å˜é‡
     private int currentFrame;
     private float timer;
     private SpriteAnimationClip currentClip;
@@ -29,24 +29,24 @@ public class SpriteAnimator : MonoBehaviour
     void Awake()
     {
         EnsureSpriteRenderer();
-        InitializePosition(); // ĞÂÔöÎ»ÖÃ³õÊ¼»¯
+        InitializePosition(); // æ–°å¢ä½ç½®åˆå§‹åŒ–
     }
 
     void Start()
     {
-        // Ä¬ÈÏ²¥·ÅµÚÒ»¸ö¶¯»­
+        // é»˜è®¤æ’­æ”¾ç¬¬ä¸€ä¸ªåŠ¨ç”»
         if (animations != null && animations.Count > 0)
         {
             PlayAnimation(animations[0].name);
         }
     }
 
-    // ĞÂÔöÎ»ÖÃ³õÊ¼»¯·½·¨
+    // æ–°å¢ä½ç½®åˆå§‹åŒ–æ–¹æ³•
     private void InitializePosition()
     {
         if (useMainCameraAsReference)
         {
-            // »ñÈ¡Ö÷Ïà»úµÄÎ»ÖÃ
+            // è·å–ä¸»ç›¸æœºçš„ä½ç½®
             Camera mainCam = Camera.main;
             if (mainCam != null)
             {
@@ -54,18 +54,18 @@ public class SpriteAnimator : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("Ö÷Ïà»úÎ´ÕÒµ½£¬Ê¹ÓÃÄ¬ÈÏÎ»ÖÃ");
+                Debug.LogWarning("ä¸»ç›¸æœºæœªæ‰¾åˆ°ï¼Œä½¿ç”¨é»˜è®¤ä½ç½®");
                 transform.position = initialPosition;
             }
         }
         else
         {
-            // Ö±½ÓÊ¹ÓÃÉèÖÃµÄ³õÊ¼Î»ÖÃ
+            // ç›´æ¥ä½¿ç”¨è®¾ç½®çš„åˆå§‹ä½ç½®
             transform.position = initialPosition;
         }
     }
 
-    // È·±£ SpriteRenderer ×é¼ş´æÔÚ
+    // ç¡®ä¿ SpriteRenderer ç»„ä»¶å­˜åœ¨
     private void EnsureSpriteRenderer()
     {
         if (spriteRenderer == null)
@@ -76,7 +76,7 @@ public class SpriteAnimator : MonoBehaviour
         if (spriteRenderer == null)
         {
             spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
-            Debug.LogWarning($"×Ô¶¯Ìí¼Ó SpriteRenderer µ½ {gameObject.name}");
+            Debug.LogWarning($"è‡ªåŠ¨æ·»åŠ  SpriteRenderer åˆ° {gameObject.name}");
         }
     }
 
@@ -124,17 +124,17 @@ public class SpriteAnimator : MonoBehaviour
         }
         else
         {
-            Debug.LogError($"SpriteRenderer È±Ê§ÓÚ {gameObject.name}£¡");
+            Debug.LogError($"SpriteRenderer ç¼ºå¤±äº {gameObject.name}ï¼");
             isPlaying = false;
         }
     }
 
-    // ====== ¹«¹²·½·¨ ======
+    // ====== å…¬å…±æ–¹æ³• ======
     public void PlayAnimation(string clipName)
     {
         if (animations == null)
         {
-            Debug.LogWarning("¶¯»­ÁĞ±íÎª¿Õ£¡");
+            Debug.LogWarning("åŠ¨ç”»åˆ—è¡¨ä¸ºç©ºï¼");
             return;
         }
 
@@ -152,7 +152,7 @@ public class SpriteAnimator : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning($"ÕÒ²»µ½¶¯»­¼ô¼­: {clipName}");
+            Debug.LogWarning($"æ‰¾ä¸åˆ°åŠ¨ç”»å‰ªè¾‘: {clipName}");
         }
     }
 
@@ -167,7 +167,7 @@ public class SpriteAnimator : MonoBehaviour
             spriteRenderer.sprite = currentClip.frames[0];
     }
 
-    // ĞÂÔö·½·¨£ºÉèÖÃ³õÊ¼Î»ÖÃ£¨¿ÉÔÚÔËĞĞÊ±µ÷ÓÃ£©
+    // æ–°å¢æ–¹æ³•ï¼šè®¾ç½®åˆå§‹ä½ç½®ï¼ˆå¯åœ¨è¿è¡Œæ—¶è°ƒç”¨ï¼‰
     public void SetInitialPosition(Vector3 newPosition)
     {
         initialPosition = newPosition;
