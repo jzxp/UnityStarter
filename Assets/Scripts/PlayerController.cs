@@ -38,6 +38,24 @@ public class PlayerController : MonoBehaviour
 
         HandleMovement();
         HandleAttack();
+
+        // 测试按键
+        if (Input.GetKeyDown(KeyCode.H)) // H键模拟受伤
+        {
+            TakeDamage(10);
+            Debug.Log($"模拟受伤，当前生命: {currentHealth}/{maxHealth}");
+        }
+
+        if (Input.GetKeyDown(KeyCode.K)) // K键模拟死亡
+        {
+            TakeDamage(currentHealth); // 直接扣光生命
+            Debug.Log("模拟死亡");
+        }
+
+        if (Input.GetKeyDown(KeyCode.R)) // R键重置角色
+        {
+            ResetPlayer();
+        }
     }
 
     void HandleMovement()
@@ -136,5 +154,8 @@ public class PlayerController : MonoBehaviour
         rb.simulated = true;
         GetComponent<Collider2D>().enabled = true;
         anim.Play("Idle");
+        anim.ResetTrigger("Dead");
+        anim.ResetTrigger("Hurt");
+        Debug.Log("角色已重置");
     }
 }
