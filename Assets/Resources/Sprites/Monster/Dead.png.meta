@@ -45,7 +45,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
@@ -113,13 +113,13 @@ TextureImporter:
       name: Dead_0
       rect:
         serializedVersion: 2
-        x: 30
+        x: 0
         y: 0
-        width: 65
-        height: 81
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 1, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
@@ -134,10 +134,10 @@ TextureImporter:
       name: Dead_2
       rect:
         serializedVersion: 2
-        x: 158
+        x: 256
         y: 0
-        width: 99
-        height: 74
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -155,10 +155,10 @@ TextureImporter:
       name: Dead_4
       rect:
         serializedVersion: 2
-        x: 283
+        x: 512
         y: 0
-        width: 100
-        height: 61
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,13 +173,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_5
+      name: Dead_1
       rect:
         serializedVersion: 2
-        x: 400
+        x: 128
         y: 0
-        width: 110
-        height: 40
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,20 +187,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3b4cb7d23a80fa44a8ef78e6facb8f53
-      internalID: 1637167865
+      spriteID: 2487ce78ccabc704799827015dba9445
+      internalID: 684798586
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dead_6
+      name: Dead_3
       rect:
         serializedVersion: 2
-        x: 528
+        x: 384
         y: 0
-        width: 112
-        height: 22
+        width: 128
+        height: 128
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eb26eaf5b8e298847bb8ff4fd4bc4b2b
-      internalID: 873379883
+      spriteID: 07ff6dbc2a6e79b47bcfd258e011d909
+      internalID: -1102193080
       vertices: []
       indices: 
       edges: []
@@ -230,9 +230,6 @@ TextureImporter:
       Dead_2: 1162267166
       Dead_3: -1102193080
       Dead_4: -1200077778
-      Dead_5: 1637167865
-      Dead_6: 873379883
-      Dead_7: 488031569
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
